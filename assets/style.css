@@ -1,12 +1,16 @@
-* {
-    font-family: 'Alfa Slab One', cursive;
-}
-
 .h1-thom {
     background-image: linear-gradient(to right, #3b6cc2, #230657);
-    
+    font-family: 'Alfa Slab One', cursive; 
   }
 
-  .text-center {
+  .text-color {
     color: white;
+    text-align: center;
+  }
+
+  .uv-index {
+      padding: 10px;
+      background-color: #157e51;
+      border-radius: 7%;
+      color: white;
   }
