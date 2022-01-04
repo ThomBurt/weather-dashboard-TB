@@ -14,3 +14,10 @@
       border-radius: 7%;
       color: white;
   }
+
+  .forecast-boxes {
+      margin: 5px;
+      padding: 10px 15px;
+      background-color: #33475a;
+      color: white;
+  }
