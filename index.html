@@ -41,13 +41,13 @@
             <div class="col-3">
                 <h3>Search for a City:</h3>
                 <input id="city-choice" class="form-control form-control-lg mt-4"type="text" placeholder="New York" onfocus="this.placeholder = ''">
-                <button id="search-btn" class="btn btn-primary btn-lg btn-block mt-4">Search</button>
+                <button id="search-btn" type="submit" class="btn btn-primary btn-lg btn-block mt-4">Search</button>
             </div>
 
             <!--UI of city info-->
           <div class="row border border-dark col-8 ml-5">
             <div class="p-3">
-                <h3 class="pb-3">Atlanta (3/30/2021) <span><img src="" alt=""></span></h3>
+                <h3 class="pb-3">City: <span id="city-name-ui"><img src="" alt=""></span></h3>
                 <p class="pb-1">Temp: <span id="temp"></span></p>
                 <p class="pb-1">Wind: <span id="wind"></span></p>
                 <p class="pb-1">Humidity: <span id="humidity"></span></p>
@@ -122,3 +122,18 @@
     <script src="js\storage.js"></script>
 </body>
 </html>
+
+
+
+
+<!-- GIVEN a weather dashboard with form inputs
+WHEN I search for a city
+THEN I am presented with current and future conditions for that city and that city is added to the search history
+WHEN I view current weather conditions for that city
+THEN I am presented with the city name, the date, an icon representation of weather conditions, the temperature, the humidity, the wind speed, and the UV index
+WHEN I view the UV index
+THEN I am presented with a color that indicates whether the conditions are favorable, moderate, or severe
+WHEN I view future weather conditions for that city
+THEN I am presented with a 5-day forecast that displays the date, an icon representation of weather conditions, the temperature, the wind speed, and the humidity
+WHEN I click on a city in the search history
+THEN I am again presented with current and future conditions for that city -->
