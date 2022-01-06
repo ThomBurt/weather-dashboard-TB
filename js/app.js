@@ -17,6 +17,11 @@ var formSubmitHandler = function(event) {
   } else {
     alert('Please enter a City');
   }
+
 };
 
 searchButtonEl.addEventListener('click', formSubmitHandler);
+
+
+
+
