@@ -1,60 +1,62 @@
-var getWeather = function(city) {
-    // format the github api url
+// var getWeather = 
+function getWeather()  {
+
+    var city = cityChoiceEl.value.trim();
+
     var apiUrl = 'https://api.openweathermap.org/data/2.5/weather?q=' + city + '&appid=3fed7a6ebcb4e1b063e09df15c8e9e7c&units=imperial';
   
-    // make a request to the url
     fetch(apiUrl).then(function(response) {
       response.json().then(function(data) {
-      console.log(data);
-      for(var i = 0; i < data.length; i++) {
-        var cityName = document.createElement('h3');
-        var temp = document.createElement('p');
-        var wind = document.createElement('p');
-        var humidity = document.createElement('p');
-        var uvIndex = document.createElement('p');
-    
-        cityName.textContent = data[i].name;
-    
-        cityNameUI.appendChild(cityName);
-      }
+
+      displayWeather(data, city);
       });
-    });
-  };
+    });    
+};
 
 
+var displayWeather = function (weather, city) {
+    console.log(weather);
+    console.log(city);
 
-// getWeather();
+    // City name
+    var nameOfCity = document.createElement('h3');   
+    nameOfCity.textContent = weather.name;
+    cityNameUI.appendChild(nameOfCity);
 
+    //Date
+    let unixTimestamp = weather.dt;
+    var newDate = new Date(unixTimestamp * 1000);
+    var actualDate = document.createElement('h4');
+    actualDate.textContent = newDate;
+    cityNameUI.appendChild(actualDate);
+    //console.log(newDate);
+
+    
+ 
+    tempEl.textContent = "Temp: " + weather.main.temp;
+    windEl.textContent = "Wind: " + weather.wind.speed;
+    humidityEl.textContent = "Humidity: " + weather.main.humidity;
+    //uvIndex.textContent = "UV Index: "; 
+
+    // // Todays date
+    // $("#currentDay").text(moment().format("dddd, Do MMMM YYYY"));
+
+    
+       // for(var i = 0; i < weather.length; i++) {
+                  
+        // var temp = document.createElement('p');
+        // var wind = document.createElement('p');
+        // var humidity = document.createElement('p');
+        // var uvIndex = document.createElement('p');
+
+        // temp.textContent = weather[i].main.temp;
+    
+        //     tempEl.appendChild(temp);
+            
+           // return weather;
+     // }
+};
 
 
 
 // https://api.openweathermap.org/data/2.5/weather?q=london&appid=3fed7a6ebcb4e1b063e09df15c8e9e7c&units=imperial
-
-
-//var getCityName = document.querySelector('#city-choice');
-
-
-
-// var getWeather = function(city) {
-
-//     var apiUrl = 'https://api.openweathermap.org/data/2.5/weather?q=' + city + '&appid=3fed7a6ebcb4e1b063e09df15c8e9e7c&units=imperial';
-
-
-//   // make a get request to url
-//   fetch(apiUrl)
-//     .then(function(response) {
-//       // request was successful
-//       if (response.ok) {
-//         console.log(response);
-//         response.json().then(function(data) {
-//           console.log(data);
-//           formSubmitHandler(data, city);
-//         });
-//       } else {
-//         alert('Error: ' + response.statusText);
-//       }
-//     })
-//     .catch(function(error) {
-//       alert('Unable to connect to Open Weather');
-//     });
-// };

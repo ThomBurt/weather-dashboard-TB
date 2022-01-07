@@ -47,11 +47,11 @@
             <!--UI of city info-->
           <div class="row border border-dark col-8 ml-5">
             <div class="p-3">
-                <h3 class="pb-3">City: <span id="city-name-ui"><img src="" alt=""></span></h3>
-                <p class="pb-1">Temp: <span id="temp"></span></p>
-                <p class="pb-1">Wind: <span id="wind"></span></p>
-                <p class="pb-1">Humidity: <span id="humidity"></span></p>
-                <p class="pb-1">UV Index: <span id="uv" class="uv-index"></span></p>
+                <div class="pb-3"><p id="city-name-ui"></p><p id="currentDay"></p></div>
+                <div class="pb-1" id="temp"></div>
+                <div class="pb-1" id="wind"></div>
+                <div class="pb-1" id="humidity"></div>
+                <div class="pb-1" id="uv" class="uv-index"></div>
             </div>
                 
         </div>
@@ -116,7 +116,8 @@
     </div>
 
 
-
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
     <script src="js\weather.js"></script>
     <script src="js\app.js"></script>
     <script src="js\storage.js"></script>
