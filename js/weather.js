@@ -22,6 +22,11 @@ var displayWeather = function (weather, city) {
     nameOfCity.textContent = weather.name;
     cityNameUI.appendChild(nameOfCity);
 
+    // //icon
+    // var icon = document.createElement('img');
+    // icon.inner.HTML = weather[0].icon;
+    // iconMain.appendChild(icon);
+
     //Date
     let unixTimestamp = weather.dt;
     var newDate = new Date(unixTimestamp * 1000);
@@ -32,9 +37,9 @@ var displayWeather = function (weather, city) {
 
 
  
-    tempEl.textContent = "Temp: " + weather.main.temp;
-    windEl.textContent = "Wind: " + weather.wind.speed;
-    humidityEl.textContent = "Humidity: " + weather.main.humidity;
+    tempEl.textContent = "Temp: " + Math.floor(weather.main.temp) + " \u00B0F";
+    windEl.textContent = "Wind: " + Math.floor(weather.wind.speed) + " mph";
+    humidityEl.textContent = "Humidity: " + Math.floor(weather.main.humidity) + " %";
     //uvIndex.textContent = "UV Index: "; 
 
     // // Todays date
@@ -58,7 +63,7 @@ var displayWeather = function (weather, city) {
 
 function fiveDayForecast() {
   var city = cityChoiceEl.value.trim();
-  var forecastAPI = 'https://api.openweathermap.org/data/2.5/forecast?q=' + city + '&appid=3fed7a6ebcb4e1b063e09df15c8e9e7c&units=imperial&cnt=5';
+  var forecastAPI = 'https://api.openweathermap.org/data/2.5/forecast?q=' + city + '&appid=3fed7a6ebcb4e1b063e09df15c8e9e7c&units=imperial&';
   fetch(forecastAPI).then(function(response) {
     response.json().then(function(data) {
       displayForecast(data, city);
@@ -71,7 +76,7 @@ function displayForecast(weather, city) {
 
   //FORECAST DAY 1
       //Date Day One
-      let unixTimestamp = weather.list[0].dt;
+      let unixTimestamp = weather.list[8].dt;
       var newDate = new Date(unixTimestamp * 1000);
       var actualDate = document.createElement('p');
       actualDate.textContent = newDate;
@@ -79,43 +84,114 @@ function displayForecast(weather, city) {
 
       //Temp Day One
       TempOne = document.createElement('p');
-      TempOne.textContent = weather.list[0].main.temp;
+      TempOne.textContent = Math.floor(weather.list[8].main.temp) + " \u00B0F";
       forecastTempOne.appendChild(TempOne);
 
       // Wind Day One
       windOne = document.createElement('p');
-      windOne.textContent = weather.list[0].wind.gust;
+      windOne.textContent = Math.floor(weather.list[8].wind.gust) + " mph";
       forecastWindOne.appendChild(windOne);
 
       //Humidity Day One
       humidityOne = document.createElement('p');
-      humidityOne.textContent = weather.list[0].main.humidity;
+      humidityOne.textContent = Math.floor(weather.list[8].main.humidity) + " %";
       forecastHumidityOne.appendChild(humidityOne);
 
 
         //FORECAST DAY 2
-      //Date Day One
-      let unixTimestamp02 = weather.list[1].dt;
-      var newDate = new Date(unixTimestamp * 1000);
-      var actualDate = document.createElement('p');
-      actualDate.textContent = newDate;
-      forecastDateTwo.appendChild(actualDate);
+      //Date Day 2
+      let unixTimestamp02 = weather.list[16].dt;
+      var newDate2 = new Date(unixTimestamp02 * 1000);
+      var actualDate2 = document.createElement('p');
+      actualDate2.textContent = newDate2;
+      forecastDateTwo.appendChild(actualDate2);
 
-      //Temp Day One
+      //Temp Day 2
       tempTwo = document.createElement('p');
-      tempTwo.textContent = weather.list[1].main.temp;
+      tempTwo.textContent = Math.floor(weather.list[16].main.temp) + " \u00B0F";
       forecastTempTwo.appendChild(tempTwo);
 
-      // Wind Day One
+      // Wind Day 2
       windTwo = document.createElement('p');
-      windTwo.textContent = weather.list[1].wind.gust;
+      windTwo.textContent = Math.floor(weather.list[16].wind.gust) + " mph";
       forecastWindTwo.appendChild(windTwo);
 
-      //Humidity Day One
+      //Humidity Day 2
       humidityTwo = document.createElement('p');
-      humidityTwo.textContent = weather.list[1].main.humidity;
+      humidityTwo.textContent = Math.floor(weather.list[16].main.humidity) + " %";
       forecastHumidityTwo.appendChild(humidityTwo);
 
+
+      //FORECAST DAY 3
+      //Date Day 3
+      let unixTimestamp03 = weather.list[24].dt;
+      var newDate3 = new Date(unixTimestamp03 * 1000);
+      var actualDate3 = document.createElement('p');
+      actualDate3.textContent = newDate3;
+      forecastDate3.appendChild(actualDate3);
+
+      //Temp Day 3
+      tempThree = document.createElement('p');
+      tempThree.textContent = Math.floor(weather.list[24].main.temp) + " \u00B0F";
+      forecastTemp3.appendChild(tempThree);
+
+      // Wind Day 3
+      windThree = document.createElement('p');
+      windThree.textContent = Math.floor(weather.list[24].wind.gust) + " mph";
+      forecastWind3.appendChild(windThree);
+
+      //Humidity Day 3
+      humidityThree = document.createElement('p');
+      humidityThree.textContent = Math.floor(weather.list[24].main.humidity) + " %";
+      forecastHumidity3.appendChild(humidityThree);
+
+
+      //FORECAST DAY 4
+      //Date Day 4
+      let unixTimestamp04 = weather.list[32].dt;
+      var newDate = new Date(unixTimestamp04 * 1000);
+      var actualDate = document.createElement('p');
+      actualDate.textContent = newDate;
+      forecastDate4.appendChild(actualDate);
+
+      //Temp Day 4
+      tempFour = document.createElement('p');
+      tempFour.textContent = Math.floor(weather.list[32].main.temp) + " \u00B0F";
+      forecastTemp4.appendChild(tempFour);
+
+      // Wind Day 4
+      windFour = document.createElement('p');
+      windFour.textContent = Math.floor(weather.list[32].wind.gust) + " mph";
+      forecastWind4.appendChild(windFour);
+
+      //Humidity Day 4
+      humidityFour = document.createElement('p');
+      humidityFour.textContent = Math.floor(weather.list[32].main.humidity) + " %";
+      forecastHumidity4.appendChild(humidityFour);
+
+
+      //FORECAST DAY 5
+      //Date Day 5
+      let unixTimestamp05 = weather.list[39].dt;
+      var newDate = new Date(unixTimestamp05 * 1000);
+      var actualDate = document.createElement('p');
+      actualDate.textContent = newDate;
+      forecastDate5.appendChild(actualDate);
+
+      //Temp Day 5
+      tempFive = document.createElement('p');
+      tempFive.textContent = Math.floor(weather.list[39].main.temp) + " \u00B0F";
+      forecastTemp5.appendChild(tempFive);
+
+      // Wind Day 5
+      windFive = document.createElement('p');
+      windFive.textContent = Math.floor(weather.list[39].wind.gust) + " mph";
+      forecastWind5.appendChild(windFive);
+
+      //Humidity Day 5
+      humidityFive = document.createElement('p');
+      humidityFive.textContent = Math.floor(weather.list[39].main.humidity) + " %";
+      forecastHumidity5.appendChild(humidityFive);
 
 
 
@@ -137,3 +213,14 @@ function displayForecast(weather, city) {
       // let date = dateObj01.getDate();
 
       // console.log(month, year, date);
+
+
+      //  for (let i = 0; i <weather.list.length; i+=8) {
+//   const temp = new Forecast(weather.list[i].dt_txt,
+//                             weather.list[i].weather[0].icon,
+//                             weather.list[i].main.temp,
+//                             weather.list[i].wind.gust,
+//                             weather.list[i].main.humidity)
+//     this.cityForecast.push(temp);
+//  }
+//  console.log(this.cityForecast);
