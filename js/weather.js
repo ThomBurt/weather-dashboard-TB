@@ -113,8 +113,8 @@ function displayForecast(weather, city) {
       actualDate2.textContent = newDate2;
       forecastDateTwo.appendChild(actualDate2);
 
-            // Icon Day Two
-            iconTwo.innerHTML = `<img src="http://openweathermap.org/img/wn/${weather.list[16].weather[0].icon}@2x.png">`;
+      // Icon Day Two
+      iconTwo.innerHTML = `<img src="http://openweathermap.org/img/wn/${weather.list[16].weather[0].icon}@2x.png">`;
 
       //Temp Day 2
       tempTwo = document.createElement('p');
@@ -140,8 +140,8 @@ function displayForecast(weather, city) {
       actualDate3.textContent = newDate3;
       forecastDate3.appendChild(actualDate3);
 
-            // Icon Day Three
-            iconThree.innerHTML = `<img src="http://openweathermap.org/img/wn/${weather.list[24].weather[0].icon}@2x.png">`;
+      // Icon Day Three
+      iconThree.innerHTML = `<img src="http://openweathermap.org/img/wn/${weather.list[24].weather[0].icon}@2x.png">`;
 
       //Temp Day 3
       tempThree = document.createElement('p');
@@ -167,8 +167,8 @@ function displayForecast(weather, city) {
       actualDate.textContent = newDate;
       forecastDate4.appendChild(actualDate);
 
-            // Icon Day Four
-            iconFour.innerHTML = `<img src="http://openweathermap.org/img/wn/${weather.list[32].weather[0].icon}@2x.png">`;
+      // Icon Day Four
+      iconFour.innerHTML = `<img src="http://openweathermap.org/img/wn/${weather.list[32].weather[0].icon}@2x.png">`;
 
       //Temp Day 4
       tempFour = document.createElement('p');
@@ -194,8 +194,8 @@ function displayForecast(weather, city) {
       actualDate.textContent = newDate;
       forecastDate5.appendChild(actualDate);
 
-            // Icon Day One
-            iconFive.innerHTML = `<img src="http://openweathermap.org/img/wn/${weather.list[39].weather[0].icon}@2x.png">`;
+      // Icon Day Five
+      iconFive.innerHTML = `<img src="http://openweathermap.org/img/wn/${weather.list[39].weather[0].icon}@2x.png">`;
 
       //Temp Day 5
       tempFive = document.createElement('p');
