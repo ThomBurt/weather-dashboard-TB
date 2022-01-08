@@ -10,26 +10,31 @@ var iconMain = document.querySelector("#main-icon-in-ui")
 
 //day 1 forecast
 var forecastDateOne = document.querySelector("#date01");
+var iconOne = document.querySelector("#icon01")
 var forecastTempOne = document.querySelector("#Temp01");
 var forecastWindOne = document.querySelector("#wind01");
 var forecastHumidityOne = document.querySelector("#humidity01");
 //day 2 forecast
 var forecastDateTwo = document.querySelector("#date02");
+var iconTwo = document.querySelector("#icon02")
 var forecastTempTwo = document.querySelector("#temp02");
 var forecastWindTwo = document.querySelector("#wind02");
 var forecastHumidityTwo = document.querySelector("#humidity02");
 //day 3 forecast
 var forecastDate3 = document.querySelector("#date03");
+var iconThree = document.querySelector("#icon03")
 var forecastTemp3 = document.querySelector("#temp03");
 var forecastWind3 = document.querySelector("#wind03");
 var forecastHumidity3 = document.querySelector("#humidity03");
 //day 4 forecast
 var forecastDate4 = document.querySelector("#date04");
+var iconFour = document.querySelector("#icon04")
 var forecastTemp4 = document.querySelector("#temp04");
 var forecastWind4 = document.querySelector("#wind04");
 var forecastHumidity4 = document.querySelector("#humidity04");
 //day 5 forecast
 var forecastDate5 = document.querySelector("#date05");
+var iconFive = document.querySelector("#icon05")
 var forecastTemp5 = document.querySelector("#temp05");
 var forecastWind5 = document.querySelector("#wind05");
 var forecastHumidity5 = document.querySelector("#humidity05");

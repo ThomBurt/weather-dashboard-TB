@@ -13,6 +13,8 @@ function getWeather()  {
     });    
 };
 
+
+
 var displayWeather = function (weather, city) {
     console.log(weather);
     console.log(city);
@@ -35,7 +37,8 @@ var displayWeather = function (weather, city) {
     cityNameUI.appendChild(actualDate);
     //console.log(newDate);
 
-
+    // Weather Icon
+    iconMain.innerHTML = `<img src="http://openweathermap.org/img/wn/${weather.weather[0].icon}@4x.png">`;
  
     tempEl.textContent = "Temp: " + Math.floor(weather.main.temp) + " \u00B0F";
     windEl.textContent = "Wind: " + Math.floor(weather.wind.speed) + " mph";
@@ -82,6 +85,10 @@ function displayForecast(weather, city) {
       actualDate.textContent = newDate;
       forecastDateOne.appendChild(actualDate);
 
+      // Icon Day One
+      iconOne.innerHTML = `<img src="http://openweathermap.org/img/wn/${weather.list[8].weather[0].icon}@2x.png">`;
+
+
       //Temp Day One
       TempOne = document.createElement('p');
       TempOne.textContent = Math.floor(weather.list[8].main.temp) + " \u00B0F";
@@ -105,6 +112,9 @@ function displayForecast(weather, city) {
       var actualDate2 = document.createElement('p');
       actualDate2.textContent = newDate2;
       forecastDateTwo.appendChild(actualDate2);
+
+            // Icon Day Two
+            iconTwo.innerHTML = `<img src="http://openweathermap.org/img/wn/${weather.list[16].weather[0].icon}@2x.png">`;
 
       //Temp Day 2
       tempTwo = document.createElement('p');
@@ -130,6 +140,9 @@ function displayForecast(weather, city) {
       actualDate3.textContent = newDate3;
       forecastDate3.appendChild(actualDate3);
 
+            // Icon Day Three
+            iconThree.innerHTML = `<img src="http://openweathermap.org/img/wn/${weather.list[24].weather[0].icon}@2x.png">`;
+
       //Temp Day 3
       tempThree = document.createElement('p');
       tempThree.textContent = Math.floor(weather.list[24].main.temp) + " \u00B0F";
@@ -154,6 +167,9 @@ function displayForecast(weather, city) {
       actualDate.textContent = newDate;
       forecastDate4.appendChild(actualDate);
 
+            // Icon Day Four
+            iconFour.innerHTML = `<img src="http://openweathermap.org/img/wn/${weather.list[32].weather[0].icon}@2x.png">`;
+
       //Temp Day 4
       tempFour = document.createElement('p');
       tempFour.textContent = Math.floor(weather.list[32].main.temp) + " \u00B0F";
@@ -177,6 +193,9 @@ function displayForecast(weather, city) {
       var actualDate = document.createElement('p');
       actualDate.textContent = newDate;
       forecastDate5.appendChild(actualDate);
+
+            // Icon Day One
+            iconFive.innerHTML = `<img src="http://openweathermap.org/img/wn/${weather.list[39].weather[0].icon}@2x.png">`;
 
       //Temp Day 5
       tempFive = document.createElement('p');
