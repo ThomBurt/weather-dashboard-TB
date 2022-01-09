@@ -82,7 +82,7 @@ var formSubmitHandler = function(event) {
 
 
 
-function searchHistory(weather){
+function searchHistoryBtn(weather){
 
   // div element is searchHistoryEl
   var searchHistoryButton = document.createElement('button');
