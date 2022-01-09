@@ -7,7 +7,6 @@ var windEl = document.querySelector("#wind");
 var humidityEl = document.querySelector("#humidity");
 var uvEl = document.querySelector("#uv");
 var iconMain = document.querySelector("#main-icon-in-ui");
-var searchHistoryEl = document.querySelector("#search-history");
 var searchHistoryTestEl = document.querySelector("#search-history-test");
 
 //day 1 forecast
@@ -83,8 +82,6 @@ var formSubmitHandler = function(event) {
 
 
 function searchHistoryBtn(weather){
-
-  // div element is searchHistoryEl
   var searchHistoryButton = document.createElement('button');
   searchHistoryButton.textContent =  weather.name;;
   searchHistoryButton.classList = "btn btn-secondary btn-lg btn-block mt-4";

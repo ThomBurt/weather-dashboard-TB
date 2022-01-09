@@ -76,6 +76,8 @@ var displayWeather = function (weather, city) {
      searchHistoryBtn(weather);
 };
 
+
+
 function fiveDayForecast() {
   var city = cityChoiceEl.value.trim();
   var forecastAPI = 'https://api.openweathermap.org/data/2.5/forecast?q=' + city + '&appid=3fed7a6ebcb4e1b063e09df15c8e9e7c&units=imperial&';
@@ -85,6 +87,8 @@ function fiveDayForecast() {
     });
   });    
 };
+
+
 
 function displayForecast(weather, city) {
   console.log(weather);
@@ -203,11 +207,7 @@ function displayForecast(weather, city) {
       humidityFive = document.createElement('p');
       humidityFive.textContent = Math.floor(weather.list[39].main.humidity) + " %";
       forecastHumidity5.appendChild(humidityFive);
-
-
-
-
-}
+};
 
 
 //api.openweathermap.org/data/2.5/forecast/daily?q=London&units=metric&cnt=7&appid=3fed7a6ebcb4e1b063e09df15c8e9e7c

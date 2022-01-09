@@ -8,16 +8,11 @@
     text-align: center;
   }
 
-  .uv-index {
-      padding: 10px;
-      background-color: #157e51;
-      border-radius: 7%;
-      color: white;
-  }
 
   .forecast-boxes {
       margin: 5px;
       padding: 10px 15px;
-      background-color: #33475a;
+      background-color: #3b6cc2;
       color: white;
+      border-radius: 7px;
   }
