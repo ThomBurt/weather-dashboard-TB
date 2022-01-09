@@ -62,6 +62,7 @@ var displayWeather = function (weather, city) {
             
            // return weather;
      // }
+     searchHistory(weather);
 };
 
 function fiveDayForecast() {

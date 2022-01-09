@@ -6,7 +6,9 @@ var tempEl = document.querySelector("#temp");
 var windEl = document.querySelector("#wind");
 var humidityEl = document.querySelector("#humidity");
 var uvEl = document.querySelector("#uv");
-var iconMain = document.querySelector("#main-icon-in-ui")
+var iconMain = document.querySelector("#main-icon-in-ui");
+var searchHistoryEl = document.querySelector("#search-history");
+var searchHistoryTestEl = document.querySelector("#search-history-test");
 
 //day 1 forecast
 var forecastDateOne = document.querySelector("#date01");
@@ -77,6 +79,19 @@ var formSubmitHandler = function(event) {
     alert('Please enter a City');
   }
 };
+
+
+
+function searchHistory(weather){
+
+  // div element is searchHistoryEl
+  var searchHistoryButton = document.createElement('button');
+  searchHistoryButton.textContent =  weather.name;;
+  searchHistoryButton.classList = "btn btn-secondary btn-lg btn-block mt-4";
+  searchHistoryTestEl.appendChild(searchHistoryButton);
+
+};
+
 
 searchButtonEl.addEventListener('click', formSubmitHandler);
 
