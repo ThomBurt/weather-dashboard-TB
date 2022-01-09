@@ -13,6 +13,7 @@ function getWeather()  {
     });    
 };
 
+var APIKey = "3fed7a6ebcb4e1b063e09df15c8e9e7c";
 
 
 var displayWeather = function (weather, city) {
@@ -24,17 +25,19 @@ var displayWeather = function (weather, city) {
     nameOfCity.textContent = weather.name;
     cityNameUI.appendChild(nameOfCity);
 
-    // //icon
-    // var icon = document.createElement('img');
-    // icon.inner.HTML = weather[0].icon;
-    // iconMain.appendChild(icon);
-
     //Date
     let unixTimestamp = weather.dt;
     var newDate = new Date(unixTimestamp * 1000);
     var actualDate = document.createElement('h4');
     actualDate.textContent = newDate;
     cityNameUI.appendChild(actualDate);
+    // var todaysDate = new Date(weather.dt * 1000);
+    // var day = todaysDate.getDate();
+    // var month = todaysDate.getMonth() + 1;
+    // var year = todaysDate.getFullYear();
+    // //var Realdate = month + "/" + day + "/" + year;
+    // cityNameUI.appendChild(month + "/" + day + "/" + year);
+
     //console.log(newDate);
 
     // Weather Icon
@@ -44,6 +47,48 @@ var displayWeather = function (weather, city) {
     windEl.textContent = "Wind: " + Math.floor(weather.wind.speed) + " mph";
     humidityEl.textContent = "Humidity: " + Math.floor(weather.main.humidity) + " %";
     //uvIndex.textContent = "UV Index: "; 
+
+            var lat = weather.coord.lat;
+            var lon = weather.coord.lon;
+            var indexQueryURL = "https://api.openweathermap.org/data/2.5/uvi/forecast?lat=" + lat + "&lon=" + lon + "&appid=" + APIKey + "&cnt=1";
+            //https://api.openweathermap.org/data/2.5/uvi/forecast?lat=51.5085&lon=-0.1257&appid=3fed7a6ebcb4e1b063e09df15c8e9e7c&cnt=1
+            fetch(indexQueryURL)
+                .then(function (response) {
+                  response.json().then(function(data) {
+                    var indexEl = document.createElement("span");
+
+                    if (data[0].value < 4 ) {
+                        indexEl.setAttribute("class", "badge bg-success");
+                    }
+                    else if (data[0].value < 8) {
+                        indexEl.setAttribute("class", "badge bg-warning");
+                    }
+                    else {
+                        indexEl.setAttribute("class", "badge bg-danger");
+                    }
+                  
+                    indexEl.innerHTML = data[0].value;
+                    uvEl.innerHTML = "UV Index: ";
+                    uvEl.append(indexEl);
+                    console.log(data);
+                    });
+                  });    
+                    // var indexEl = document.createElement("span");
+
+                    // if (response.data[0].value < 4 ) {
+                    //     indexEl.setAttribute("class", "badge bg-success");
+                    // }
+                    // else if (response.data[0].value < 8) {
+                    //     indexEl.setAttribute("class", "badge bg-warning");
+                    // }
+                    // else {
+                    //     indexEl.setAttribute("class", "badge bg-danger");
+                    // }
+                  
+                    //uvEl.innerHTML = response.data[0].value;
+                    // uvEl.innerHTML = "UV Index: ";
+                    // uvEl.append(indexEl);
+          
 
     // // Todays date
     // $("#currentDay").text(moment().format("dddd, Do MMMM YYYY"));
