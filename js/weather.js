@@ -101,27 +101,7 @@ function fiveDayForecast(city) {
 function displayForecast(weather, city) {
   console.log(weather);
 
-  //TODO: You will need to clear those element that has appendchild
-  forecastDateOne.textContent = "";
-    forecastTempOne.textContent = "";
-    forecastWindOne.textContent = "";
-    forecastHumidityOne.textContent = "";
-    forecastDateTwo.textContent = "";
-    forecastTempTwo.textContent = "";
-    forecastWindTwo.textContent = "";
-    forecastHumidityTwo.textContent = "";
-    forecastDate3.textContent = "";
-    forecastTemp3.textContent = "";
-    forecastWind3.textContent = "";
-    forecastHumidity3.textContent = "";
-    forecastDate4.textContent = "";
-    forecastTemp4.textContent = "";
-    forecastWind4.textContent = "";
-    forecastHumidity4.textContent = "";
-    forecastDate5.textContent = "";
-    forecastTemp5.textContent = "";
-    forecastWind5.textContent = "";
-    forecastHumidity5.textContent = "";
+  resetElements();
 
   //FORECAST DAY 1
   //Date Day One
@@ -239,3 +219,26 @@ function displayForecast(weather, city) {
 
 // https://api.openweathermap.org/data/2.5/weather?q=london&appid=3fed7a6ebcb4e1b063e09df15c8e9e7c&units=imperial
 // https://api.openweathermap.org/data/2.5/forecast/daily?q=london&appid=3fed7a6ebcb4e1b063e09df15c8e9e7c&units=imperial&cnt=5
+
+function resetElements(){
+  forecastDateOne.textContent = "";
+  forecastTempOne.textContent = "";
+  forecastWindOne.textContent = "";
+  forecastHumidityOne.textContent = "";
+  forecastDateTwo.textContent = "";
+  forecastTempTwo.textContent = "";
+  forecastWindTwo.textContent = "";
+  forecastHumidityTwo.textContent = "";
+  forecastDate3.textContent = "";
+  forecastTemp3.textContent = "";
+  forecastWind3.textContent = "";
+  forecastHumidity3.textContent = "";
+  forecastDate4.textContent = "";
+  forecastTemp4.textContent = "";
+  forecastWind4.textContent = "";
+  forecastHumidity4.textContent = "";
+  forecastDate5.textContent = "";
+  forecastTemp5.textContent = "";
+  forecastWind5.textContent = "";
+  forecastHumidity5.textContent = "";
+}
