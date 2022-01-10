@@ -40,6 +40,12 @@ var forecastTemp5 = document.querySelector("#temp05");
 var forecastWind5 = document.querySelector("#wind05");
 var forecastHumidity5 = document.querySelector("#humidity05");
 
+// Q Added
+$(document).ready(function () {
+  getCityFromLocalStorage();
+});
+
+
 
 var formSubmitHandler = function(event) {
     event.preventDefault();
@@ -50,6 +56,7 @@ var formSubmitHandler = function(event) {
     getWeather(city);
     fiveDayForecast(city);
 
+    saveCityToLocalStorage(city);
    
     cityNameUI.textContent = '';
     cityChoiceEl.value = '';
@@ -74,6 +81,24 @@ var formSubmitHandler = function(event) {
     forecastTemp5.textContent = '';
     forecastWind5.textContent = '';
     forecastHumidity5.textContent = '';
+
+
+    
+//LOCAL STORAGE
+    // var citiesForLocal = JSON.parse(window.localStorage.getItem('cities')) || [];
+    
+    // var cityDataSave = {
+    //   city: city,
+    // };
+
+    // citiesForLocal.push(cityDataSave)
+
+
+    // localStorage.setItem('cities', JSON.stringify(citiesForLocal));
+    // //getCityFromLocalStorage();
+    // console.log(localStorage);
+
+
   } else {
     alert('Please enter a City');
   }
@@ -81,17 +106,31 @@ var formSubmitHandler = function(event) {
 
 
 
-function searchHistoryBtn(weather){
-  var searchHistoryButton = document.createElement('button');
-  searchHistoryButton.textContent =  weather.name;;
-  searchHistoryButton.classList = "btn btn-secondary btn-lg btn-block mt-4";
-  searchHistoryTestEl.appendChild(searchHistoryButton);
 
-};
+// function searchHistoryBtn(weather){
+//   var searchHistoryButton = document.createElement('button');
+//   searchHistoryButton.textContent =  weather.name;;
+//   searchHistoryButton.classList = "btn btn-secondary btn-lg btn-block mt-4";
+//   searchHistoryTestEl.appendChild(searchHistoryButton);
+
+// };
 
 
 searchButtonEl.addEventListener('click', formSubmitHandler);
 
+
+
+// function storeSelectedCityToLocalStorage(cityObject) {
+//   var cities = JSON.parse(window.localStorage.getItem('cities')) || [];
+//   let foundCity = cities.find((city) => city.name === cityObject.name && city.state === cityObject.state);
+//   if (!foundCity) {
+//     // save to localstorage
+//     cityObject.dateCreated = new Date(); // add a new property
+//     cities.push(cityObject);
+//   }
+//   window.localStorage.setItem('cities', JSON.stringify(cities));
+//   getCityFromLocalStorage();
+// }
 
 
 
