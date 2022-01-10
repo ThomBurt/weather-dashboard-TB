@@ -36,3 +36,10 @@ function getCityFromLocalStorage() {
       }
     }
   }
+
+
+  
+  searchHistoryButtonEl.addEventListener("click", function () {
+    localStorage.clear();
+    window.location.reload();
+})

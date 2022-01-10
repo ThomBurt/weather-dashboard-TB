@@ -1,4 +1,5 @@
 var searchButtonEl = document.querySelector("#search-btn");
+var searchHistoryButtonEl = document.querySelector("#search-history-btn");
 var cityChoiceEl = document.querySelector("#city-choice");
 var cityNameUI = document.querySelector("#city-name-ui");
 var dateEl = document.querySelector("#currentDay");
@@ -69,6 +70,29 @@ var formSubmitHandler = function(event) {
 };
 
 
+
+function resetElements(){
+  forecastDateOne.textContent = "";
+  forecastTempOne.textContent = "";
+  forecastWindOne.textContent = "";
+  forecastHumidityOne.textContent = "";
+  forecastDateTwo.textContent = "";
+  forecastTempTwo.textContent = "";
+  forecastWindTwo.textContent = "";
+  forecastHumidityTwo.textContent = "";
+  forecastDate3.textContent = "";
+  forecastTemp3.textContent = "";
+  forecastWind3.textContent = "";
+  forecastHumidity3.textContent = "";
+  forecastDate4.textContent = "";
+  forecastTemp4.textContent = "";
+  forecastWind4.textContent = "";
+  forecastHumidity4.textContent = "";
+  forecastDate5.textContent = "";
+  forecastTemp5.textContent = "";
+  forecastWind5.textContent = "";
+  forecastHumidity5.textContent = "";
+};
 
 
 searchButtonEl.addEventListener('click', formSubmitHandler);
