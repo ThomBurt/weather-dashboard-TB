@@ -1,6 +1,9 @@
 .h1-thom {
-    background-image: linear-gradient(to right, #3b6cc2, #230657);
+    /* background-image: linear-gradient(to right, #3b6cc2, #230657); */
     font-family: 'Alfa Slab One', cursive; 
+    /* background-image: url('../images/jason-blackeye-ap3LXI0fPJY-unsplash.jpg'); */
+    margin-top: 10px;
+
   }
 
   .text-color {
@@ -16,3 +19,18 @@
       color: white;
       border-radius: 7px;
   }
+
+
+  body {
+    background-image: url('../images/jason-blackeye-ap3LXI0fPJY-unsplash.jpg') ;
+    background-size: cover;
+    background-attachment: fixed;
+
+}
+
+.city-ui {
+  background-image: linear-gradient(to bottom right, #60a0ac, #3b6cc2);
+  border-radius: 0.5%;
+  opacity: 90%;
+  color: white;
+}
